@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace WalrusSeaFight
 {
-    public class GameField
+    public partial class GameField
     {
         public List<Ship> Ships { get; private set; }
+        public List<Point> Misses { get; private set; }
 
         public GameField()
         {
