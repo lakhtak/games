@@ -18,11 +18,6 @@ namespace WalrusSeaFight
             }
         }
 
-        public bool CheckBorders(int border)
-        {
-            return Parts.All(part => part.X <= border && part.Y <= border);
-        }
-
         public bool Bomb(int x, int y)
         {
             var hitPart = Parts.FirstOrDefault(part => part.Equals(x, y));
@@ -36,9 +31,21 @@ namespace WalrusSeaFight
             return true;
         }
 
+        public bool ValidatePosition()
+        {
+            return
+                Parts.All(
+                    part => part.X <= Constants.CellCount && part.X > 0 && part.Y <= Constants.CellCount && part.Y > 0);
+        }
+
         public override string ToString()
         {
             return "<" + string.Join(",", Parts.Select(part => string.Format("{0}-{1}-{2}", part.X, part.Y, part.Bombed ? "X" : "O"))) + ">";
+        }
+
+        public bool IntersectsWith(Ship ship)
+        {
+            return ship.Parts.Any(partToCheck => Parts.Any(part => part.IsBeside(partToCheck)));
         }
     }
 }

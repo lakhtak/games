@@ -1,4 +1,6 @@
-﻿namespace WalrusSeaFight
+﻿using System;
+
+namespace WalrusSeaFight
 {
     public class ShipPart
     {
@@ -16,6 +18,11 @@
         public bool Equals(int x, int y)
         {
             return X == x && Y == y;
+        }
+
+        public bool IsBeside(ShipPart otherPart)
+        {
+            return Math.Abs(X - otherPart.X) <= 1 && Math.Abs(Y - otherPart.Y) <= 1;
         }
     }
 }

@@ -63,9 +63,9 @@ namespace WalrusSeaFight.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_dark {
+        internal static System.Drawing.Bitmap MainBackground {
             get {
-                object obj = ResourceManager.GetObject("logo_dark", resourceCulture);
+                object obj = ResourceManager.GetObject("MainBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

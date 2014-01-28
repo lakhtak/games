@@ -10,7 +10,7 @@ namespace WalrusSeaFight.UnitTests
         [TestMethod]
         public void AddShipTest()
         {
-            var gameField = new GameField(Constants.CellCount);
+            var gameField = new GameField();
 
             var goodShip1 = new Ship(1, 2, 3);
             var goodShip2 = new Ship(Constants.CellCount - 1, Constants.CellCount - 2, 2, false);
@@ -37,7 +37,7 @@ namespace WalrusSeaFight.UnitTests
         [TestMethod]
         public void BombTest()
         {
-            var gameField = new GameField(Constants.CellCount);
+            var gameField = new GameField();
             gameField.AddShip(new Ship(1, 2, 3));
             gameField.AddShip(new Ship(Constants.CellCount - 1, Constants.CellCount - 2, 2, false));
             gameField.AddShip(new Ship(5, 4, Constants.MaxLength));

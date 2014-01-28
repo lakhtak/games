@@ -6,20 +6,21 @@ namespace WalrusSeaFight
     public class GameField
     {
         public List<Ship> Ships { get; private set; }
-        private readonly int _size;
 
-        public GameField(int size)
+        public GameField()
         {
-            _size = size;
             Ships = new List<Ship>();
         }
 
-        public bool AddShip(Ship ship)
+        public bool AddShip(Ship shipToAdd)
         {
-            if (!ship.CheckBorders(_size))
+            if (!shipToAdd.ValidatePosition())
                 return false;
 
-            Ships.Add(ship);
+            if (Ships.Any(ship => ship.IntersectsWith(shipToAdd)))
+                return false;
+
+            Ships.Add(shipToAdd);
             return true;
         }
 
