@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Linq;
 
-namespace WalrusSeaFight
+namespace Logic
 {
-    public partial class GameField
+    public class GameField
     {
         public List<Ship> Ships { get; private set; }
         public List<Point> Misses { get; private set; }
@@ -12,6 +12,7 @@ namespace WalrusSeaFight
         public GameField()
         {
             Ships = new List<Ship>();
+            Misses = new List<Point>();
         }
 
         public bool AddShip(Ship shipToAdd)
@@ -28,8 +29,28 @@ namespace WalrusSeaFight
 
         public bool Bomb(int x, int y)
         {
-            return Ships.Select(ship => ship.Bomb(x, y)).Any(bombed => bombed);
+            if (!Ships.Select(ship => ship.Bomb(x, y)).Any(bombed => bombed))
+            {
+                Misses.Add(new Point(x, y));
+            }
+            return true;
         }
+
+        //public bool Bomb(int x, int y)
+        //{
+        //    var bombed = false;
+
+        //    foreach (var ship in Ships)
+        //    {
+        //        bombed = ship.Bomb(x, y);
+        //        if (bombed)
+        //            break;
+        //    }
+        //    if (!bombed)
+        //        Misses.Add(new Point(x, y));
+
+        //    return bombed;
+        //}
 
         public override string ToString()
         {

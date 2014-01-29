@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WalrusSeaFight
+namespace Logic
 {
     public class ShipPart
     {

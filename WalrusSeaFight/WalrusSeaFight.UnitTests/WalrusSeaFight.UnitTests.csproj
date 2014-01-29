@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{9be65a1a-029d-4494-a015-3833003851e3}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WalrusSeaFight\WalrusSeaFight.csproj">
       <Project>{22D17D45-6B00-4B51-B9B4-7CF4D9182F7F}</Project>
       <Name>WalrusSeaFight</Name>

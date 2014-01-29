@@ -32,41 +32,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\OpenTk\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\OpenTk\OpenTK.GLControl.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\GameField.cs" />
-    <Compile Include="GUI\MainWindow.cs">
+    <Compile Include="MyFieldPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpponentsFieldPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Painter.cs" />
+    <Compile Include="GuiConstants.cs" />
+    <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MainWindow.Designer.cs">
+    <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MyGameField.cs" />
-    <Compile Include="Ship.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="GameField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShipPart.cs" />
-    <EmbeddedResource Include="GUI\MainWindow.resx">
+    <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -96,16 +84,25 @@
     <None Include="Resources\MainBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bombed.jpg" />
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{9BE65A1A-029D-4494-A015-3833003851E3}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\empty.jpg" />
+    <None Include="Resources\bombed.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\miss.jpg" />
+    <None Include="Resources\empty.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship.jpg" />
+    <None Include="Resources\miss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

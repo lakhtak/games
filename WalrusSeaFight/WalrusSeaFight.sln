@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalrusSeaFight", "WalrusSea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalrusSeaFight.UnitTests", "WalrusSeaFight.UnitTests\WalrusSeaFight.UnitTests.csproj", "{CA0FD120-BAE5-4E34-9ED8-FBA2E047E66E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{9BE65A1A-029D-4494-A015-3833003851E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{CA0FD120-BAE5-4E34-9ED8-FBA2E047E66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA0FD120-BAE5-4E34-9ED8-FBA2E047E66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA0FD120-BAE5-4E34-9ED8-FBA2E047E66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE65A1A-029D-4494-A015-3833003851E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE65A1A-029D-4494-A015-3833003851E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE65A1A-029D-4494-A015-3833003851E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE65A1A-029D-4494-A015-3833003851E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

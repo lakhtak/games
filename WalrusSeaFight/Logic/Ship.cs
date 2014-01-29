@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace WalrusSeaFight
+namespace Logic
 {
     public class Ship
     {
@@ -33,9 +33,11 @@ namespace WalrusSeaFight
 
         public bool ValidatePosition()
         {
-            return
-                Parts.All(
-                    part => part.X <= Constants.CellCount && part.X > 0 && part.Y <= Constants.CellCount && part.Y > 0);
+            return Parts.Any()
+                   && Parts.All(
+                       part =>
+                           part.X <= GameConstants.CellCount && part.X > 0 && part.Y <= GameConstants.CellCount &&
+                           part.Y > 0);
         }
 
         public override string ToString()
