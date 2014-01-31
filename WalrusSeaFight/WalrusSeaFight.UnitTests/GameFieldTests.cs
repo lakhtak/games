@@ -11,7 +11,7 @@ namespace WalrusSeaFight.UnitTests
         [TestMethod]
         public void AddShipTest()
         {
-            var gameField = MyGameField.Instance;
+            var gameField = MyField.Instance;
 
             var goodShip1 = new Ship(1, 2, 3);
             var goodShip2 = new Ship(GameConstants.CellCount - 1, GameConstants.CellCount - 2, 2, false);
@@ -38,7 +38,7 @@ namespace WalrusSeaFight.UnitTests
         [TestMethod]
         public void BombTest()
         {
-            var gameField = MyGameField.Instance;
+            var gameField = MyField.Instance;
 
             gameField.AddShip(new Ship(1, 2, 3));
             gameField.AddShip(new Ship(GameConstants.CellCount - 1, GameConstants.CellCount - 2, 2, false));

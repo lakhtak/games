@@ -1,10 +1,10 @@
 ﻿namespace Logic
 {
-    public static class MyGameField
+    public static class MyField
     {
         public static GameField Instance { get; private set; }
 
-        static MyGameField()
+        static MyField()
         {
             Instance = new GameField();
         }

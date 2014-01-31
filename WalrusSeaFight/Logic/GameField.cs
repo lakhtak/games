@@ -15,7 +15,7 @@ namespace Logic
             Misses = new List<Point>();
         }
 
-        public bool AddShip(Ship shipToAdd)
+        public bool AddShip(Ship shipToAdd, bool reallyAdd = true)
         {
             if (!shipToAdd.ValidatePosition())
                 return false;
@@ -23,7 +23,9 @@ namespace Logic
             if (Ships.Any(ship => ship.IntersectsWith(shipToAdd)))
                 return false;
 
-            Ships.Add(shipToAdd);
+            if (reallyAdd)
+                Ships.Add(shipToAdd);
+            
             return true;
         }
 
@@ -36,21 +38,11 @@ namespace Logic
             return true;
         }
 
-        //public bool Bomb(int x, int y)
-        //{
-        //    var bombed = false;
-
-        //    foreach (var ship in Ships)
-        //    {
-        //        bombed = ship.Bomb(x, y);
-        //        if (bombed)
-        //            break;
-        //    }
-        //    if (!bombed)
-        //        Misses.Add(new Point(x, y));
-
-        //    return bombed;
-        //}
+        public void Clear()
+        {
+            Ships.Clear();
+            Misses.Clear();
+        }
 
         public override string ToString()
         {
