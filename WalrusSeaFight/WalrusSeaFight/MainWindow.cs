@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using Logic;
 
 namespace WalrusSeaFight
@@ -21,6 +22,15 @@ namespace WalrusSeaFight
             myFieldPictureBox.Invalidate();
 
             Allocator.AllocateShipsRandomly(OpponentsField.Instance);
+            opponentsFieldPictureBox.Invalidate();
+        }
+
+        private void opponentsFieldPictureBox_Click(object sender, MouseEventArgs e)
+        {
+            var cellX = e.X / GuiConstants.CellSize + 1;
+            var cellY = e.Y / GuiConstants.CellSize + 1;
+
+            OpponentsField.Instance.Bomb(cellX, cellY);
             opponentsFieldPictureBox.Invalidate();
         }
     }

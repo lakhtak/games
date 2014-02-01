@@ -73,6 +73,7 @@ namespace WalrusSeaFight
             this.opponentsFieldPictureBox.Size = new System.Drawing.Size(300, 300);
             this.opponentsFieldPictureBox.TabIndex = 2;
             this.opponentsFieldPictureBox.TabStop = false;
+            this.opponentsFieldPictureBox.MouseClick += new MouseEventHandler(this.opponentsFieldPictureBox_Click);
             // 
             // myFieldPictureBox
             // 
