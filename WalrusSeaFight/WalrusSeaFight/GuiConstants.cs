@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using Logic;
 using WalrusSeaFight.Properties;
 
 namespace WalrusSeaFight
@@ -7,7 +8,9 @@ namespace WalrusSeaFight
     {
         public const int NominalWindowHeight = 800;
         public const int NominalWindowWidth = 600;
+        
         public const int CellSize = 30;
+        public static readonly int GameFieldSize = CellSize * GameConstants.CellCount;
 
         public static readonly Bitmap EmptyImage = Resources.empty;
         public static readonly Bitmap UnknownImage = Resources.unknown;

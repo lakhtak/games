@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace Logic
 {
@@ -8,5 +8,7 @@ namespace Logic
         public const int CellCount = 10;
         
         public const int MaxLength = 4;
+
+        public static readonly TimeSpan ComputerThinkTime = TimeSpan.FromSeconds(10);
     }
 }

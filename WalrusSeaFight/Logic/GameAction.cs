@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace Logic
 {
-    public static class Allocator
+    public static class GameAction
     {
         public static void AllocateShipsRandomly(GameField gameField)
         {
@@ -38,6 +40,18 @@ namespace Logic
                 }
             }
             return possibleAllocations;
+        }
+
+        public static void BombOpponent(int x, int y)
+        {
+            if (!OpponentsField.Instance.Bomb(x, y))
+            {
+                GameState.State = State.Wait;
+                return;
+            }
+
+            if (OpponentsField.Instance.Ships.All(ship => ship.Killed))
+                GameState.State = State.GameOver;
         }
     }
 }

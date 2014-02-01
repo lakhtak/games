@@ -1,10 +1,12 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using Logic;
 
 namespace WalrusSeaFight
 {
-    public class OpponentsFieldPictureBox : PictureBox
+    public class PlayerFieldPictureBox : PictureBox
     {
         private Graphics _drawArea;
 
@@ -21,7 +23,7 @@ namespace WalrusSeaFight
 
         private void DrawShips()
         {
-            foreach (var ship in OpponentsField.Instance.Ships)
+            foreach (var ship in PlayerField.Instance.Ships)
             {
                 Painter.PaintShip(_drawArea, ship);
             }
@@ -29,7 +31,7 @@ namespace WalrusSeaFight
 
         private void DrawMissed()
         {
-            foreach (var miss in OpponentsField.Instance.Misses)
+            foreach (var miss in PlayerField.Instance.Misses)
             {
                 Painter.PaintCell(_drawArea, GuiConstants.MissImage, miss.X, miss.Y);
             }
@@ -41,7 +43,7 @@ namespace WalrusSeaFight
             {
                 for (var j = 1; j <= GameConstants.CellCount; j++)
                 {
-                    Painter.PaintCell(_drawArea, GuiConstants.UnknownImage, i, j);
+                    Painter.PaintCell(_drawArea, GuiConstants.EmptyImage, i, j);
                 }
             }
         }

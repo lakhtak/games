@@ -34,6 +34,7 @@ namespace Logic
             if (!Ships.Select(ship => ship.Bomb(x, y)).Any(bombed => bombed))
             {
                 Misses.Add(new Point(x, y));
+                return false;
             }
             return true;
         }
