@@ -46,12 +46,28 @@ namespace Logic
         {
             if (!OpponentsField.Instance.Bomb(x, y))
             {
-                GameState.State = State.Wait;
+                TheGame.ChangeState(State.OpponentsTurn);
                 return;
             }
 
             if (OpponentsField.Instance.Ships.All(ship => ship.Killed))
-                GameState.State = State.GameOver;
+                TheGame.ChangeState(State.GameOver);
+            else
+                TheGame.ChangeState(State.PlayerTurn);
+        }
+
+        public static void BombPlayer(int x, int y)
+        {
+            if (!PlayerField.Instance.Bomb(x, y))
+            {
+                TheGame.ChangeState(State.PlayerTurn);
+                return;
+            }
+
+            if (PlayerField.Instance.Ships.All(ship => ship.Killed))
+                TheGame.ChangeState(State.GameOver);
+            else
+                TheGame.ChangeState(State.OpponentsTurn);
         }
     }
 }

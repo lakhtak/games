@@ -6,6 +6,7 @@ namespace WalrusSeaFight
 {
     public static class GuiConstants
     {
+        public const string WindowTitle = "Моржебой :[";
         public const int NominalWindowHeight = 800;
         public const int NominalWindowWidth = 600;
         
@@ -16,6 +17,7 @@ namespace WalrusSeaFight
         public static readonly Bitmap UnknownImage = Resources.unknown;
         public static readonly Bitmap ShipImage = Resources.ship;
         public static readonly Bitmap BombedImage = Resources.bombed;
+        public static readonly Bitmap KilledImage = Resources.killed;
         public static readonly Bitmap MissImage = Resources.miss;
     }
 }

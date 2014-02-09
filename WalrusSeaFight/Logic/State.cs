@@ -5,7 +5,7 @@
         Initial,
         Allocated,
         PlayerTurn,
-        Wait,
+        OpponentsTurn,
         GameOver
     }
 }

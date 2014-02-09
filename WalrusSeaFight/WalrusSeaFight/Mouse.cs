@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Security;
+using Logic;
 
 namespace WalrusSeaFight
 {
@@ -26,7 +27,13 @@ namespace WalrusSeaFight
         private const UInt32 WM_MOUSELAST = 0x020D;
         public const int PM_REMOVE = 0x0001;
 
-        public static void FlushAllEvents()
+        public static void OnGameStateChanged(object sender, StateEventArgs e)
+        {
+            if (e.NewState == State.PlayerTurn || e.NewState == State.GameOver)
+                FlushAllEvents();
+        }
+
+        private static void FlushAllEvents()
         {
             NativeMessage msg;
             while (PeekMessage(out msg, IntPtr.Zero,

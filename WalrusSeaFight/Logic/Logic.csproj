@@ -44,7 +44,7 @@
     <Compile Include="GameAction.cs" />
     <Compile Include="GameConstants.cs" />
     <Compile Include="GameField.cs" />
-    <Compile Include="GameState.cs" />
+    <Compile Include="TheGame.cs" />
     <Compile Include="PlayerField.cs" />
     <Compile Include="OpponentsField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

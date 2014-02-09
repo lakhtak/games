@@ -34,11 +34,11 @@ namespace WalrusSeaFight
         private void InitializeComponent()
         {
             this.header = new System.Windows.Forms.Label();
-            this.randomAllocationButton = new System.Windows.Forms.Button();
-            this.startButton = new System.Windows.Forms.Button();
-            this.restartButton = new System.Windows.Forms.Button();
-            this.leaveButton = new System.Windows.Forms.Button();
-            this.infoBox = new System.Windows.Forms.Label();
+            this.randomAllocationButton = new RandomAllocationButton();
+            this.startButton = new StartButton();
+            this.restartButton = new RestartButton();
+            this.leaveButton = new LeaveButton();
+            this.infoBox = new InfoBox();
             this.opponentsFieldPictureBox = new WalrusSeaFight.OpponentsFieldPictureBox();
             this.playerFieldPictureBox = new WalrusSeaFight.PlayerFieldPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.opponentsFieldPictureBox)).BeginInit();
@@ -163,10 +163,10 @@ namespace WalrusSeaFight
         private OpponentsFieldPictureBox opponentsFieldPictureBox;
         private PlayerFieldPictureBox playerFieldPictureBox;
         private Label header;
-        private Button randomAllocationButton;
-        private Button startButton;
-        private Button restartButton;
-        private Button leaveButton;
-        private Label infoBox;
+        private RandomAllocationButton randomAllocationButton;
+        private StartButton startButton;
+        private RestartButton restartButton;
+        private LeaveButton leaveButton;
+        private InfoBox infoBox;
     }
 }

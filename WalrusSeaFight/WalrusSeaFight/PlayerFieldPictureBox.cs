@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using Logic;
 
@@ -19,6 +17,12 @@ namespace WalrusSeaFight
             DrawEmptyCells();
             DrawMissed();
             DrawShips();
+        }
+
+        public void OnGameStateChanged(object sender, StateEventArgs e)
+        {
+            if (e.NewState != State.OpponentsTurn)
+                Invalidate();
         }
 
         private void DrawShips()

@@ -19,11 +19,19 @@ namespace WalrusSeaFight
             DrawShips();
         }
 
+        public void OnGameStateChanged(object sender, StateEventArgs e)
+        {
+            Visible = e.NewState == State.PlayerTurn || e.NewState == State.OpponentsTurn || e.NewState == State.GameOver;
+
+            if (e.NewState != State.Initial)
+                Invalidate();
+        }
+
         private void DrawShips()
         {
             foreach (var ship in OpponentsField.Instance.Ships)
             {
-                Painter.PaintShip(_drawArea, ship);
+                Painter.PaintShip(_drawArea, ship, hide: true);
             }
         }
 
