@@ -40,11 +40,6 @@ namespace Logic
                            part.Y > 0);
         }
 
-        public override string ToString()
-        {
-            return "<" + string.Join(",", Parts.Select(part => string.Format("{0}-{1}-{2}", part.X, part.Y, part.Bombed ? "X" : "O"))) + ">";
-        }
-
         public bool IntersectsWith(Ship ship)
         {
             return ship.Parts.Any(partToCheck => Parts.Any(part => part.IsBeside(partToCheck)));

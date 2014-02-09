@@ -44,10 +44,5 @@ namespace Logic
             Ships.Clear();
             Misses.Clear();
         }
-
-        public override string ToString()
-        {
-            return string.Join("\r\n", Ships);
-        }
     }
 }

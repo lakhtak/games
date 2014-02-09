@@ -27,9 +27,9 @@ namespace WalrusSeaFight
         private const UInt32 WM_MOUSELAST = 0x020D;
         public const int PM_REMOVE = 0x0001;
 
-        public static void OnGameStateChanged(object sender, StateEventArgs e)
+        public static void OnGameStateChanged(State state)
         {
-            if (e.NewState == State.PlayerTurn || e.NewState == State.GameOver)
+            if (state == State.PlayerTurn || state == State.GameOver)
                 FlushAllEvents();
         }
 

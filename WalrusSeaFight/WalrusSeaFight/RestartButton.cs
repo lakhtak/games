@@ -5,12 +5,12 @@ namespace WalrusSeaFight
 {
     public class RestartButton : Button
     {
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            if (e.NewState == State.Initial)
+            if (state == State.Initial)
                 Text = Localization.RestartButton;
 
-            Visible = e.NewState == State.GameOver;
+            Visible = state == State.GameOver;
         }
     }
 }

@@ -5,12 +5,12 @@ namespace WalrusSeaFight
 {
     public class LeaveButton : Button
     {
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            if (e.NewState == State.Initial)
+            if (state == State.Initial)
                 Text = Localization.LeaveButton;
 
-            Visible = e.NewState == State.PlayerTurn || e.NewState == State.OpponentsTurn;
+            Visible = state == State.PlayerTurn || state == State.OpponentsTurn;
         }
     }
 }

@@ -19,9 +19,9 @@ namespace WalrusSeaFight
             DrawShips();
         }
 
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            if (e.NewState != State.OpponentsTurn)
+            if (state != State.OpponentsTurn)
                 Invalidate();
         }
 

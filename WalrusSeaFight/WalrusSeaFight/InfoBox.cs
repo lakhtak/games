@@ -5,9 +5,9 @@ namespace WalrusSeaFight
 {
     public class InfoBox : Label
     {
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            switch (e.NewState)
+            switch (state)
             {
                 case State.Initial:
                     Text = Localization.PleaseAllocateShips;

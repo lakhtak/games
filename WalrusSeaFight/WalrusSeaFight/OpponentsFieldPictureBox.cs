@@ -19,11 +19,11 @@ namespace WalrusSeaFight
             DrawShips();
         }
 
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            Visible = e.NewState == State.PlayerTurn || e.NewState == State.OpponentsTurn || e.NewState == State.GameOver;
+            Visible = state == State.PlayerTurn || state == State.OpponentsTurn || state == State.GameOver;
 
-            if (e.NewState != State.Initial)
+            if (state != State.Initial)
                 Invalidate();
         }
 

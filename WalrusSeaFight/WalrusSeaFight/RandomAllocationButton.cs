@@ -5,12 +5,12 @@ namespace WalrusSeaFight
 {
     public class RandomAllocationButton : Button
     {
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            if (e.NewState == State.Initial)
+            if (state == State.Initial)
                 Text = Localization.RandomAllocationButton;
 
-            Visible = e.NewState == State.Initial || e.NewState == State.Allocated;
+            Visible = state == State.Initial || state == State.Allocated;
         }
     }
 }

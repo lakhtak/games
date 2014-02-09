@@ -5,12 +5,12 @@ namespace WalrusSeaFight
 {
     public class StartButton : Button
     {
-        public void OnGameStateChanged(object sender, StateEventArgs e)
+        public void OnGameStateChanged(State state)
         {
-            if (e.NewState == State.Initial)
+            if (state == State.Initial)
                 Text = Localization.StartButton;
 
-            Visible = e.NewState == State.Allocated;
+            Visible = state == State.Allocated;
         }
     }
 }

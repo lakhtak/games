@@ -9,7 +9,7 @@
             Instance = new GameField();
         }
 
-        public static void OnGameStateChanged(object sender, StateEventArgs e)
+        public static void OnGameStateChanged(State state)
         {
         }
     }

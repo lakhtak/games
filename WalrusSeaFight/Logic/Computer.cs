@@ -9,9 +9,9 @@ namespace Logic
         private static BackgroundWorker _computerThread;
         private static bool _interrupt;
 
-        public static void OnGameStateChanged(object sender, StateEventArgs e)
+        public static void OnGameStateChanged(State state)
         {
-            if (e.NewState == State.OpponentsTurn)
+            if (state == State.OpponentsTurn)
                 Move();
         }
 
