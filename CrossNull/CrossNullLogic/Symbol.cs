@@ -1,6 +1,6 @@
-﻿namespace CrossNull
+﻿namespace CrossNullLogic
 {
-    enum Who
+    public enum Symbol
     {
         NoOne,
         X,

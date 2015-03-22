@@ -1,14 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
-namespace CrossNull
+namespace CrossNullLogic
 {
-    class Game
+    public class Game
     {
-        public Who Turn { get; private set; }
-
         public Player CurrentPlayer { get; private set; }
-
         public Player PlayerX { get; private set; }
         public Player PlayerO { get; private set; }
 
@@ -21,7 +17,7 @@ namespace CrossNull
         
         public void SwitchTurn()
         {
-            if (CurrentPlayer == null || CurrentPlayer.Symbol == Who.O)
+            if (CurrentPlayer == null || CurrentPlayer.Symbol == Symbol.O)
                 CurrentPlayer = PlayerX;
             else
                 CurrentPlayer = PlayerO;

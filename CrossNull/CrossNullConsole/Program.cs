@@ -1,10 +1,11 @@
 ﻿using System;
+using CrossNullLogic;
 
-namespace CrossNull
+namespace CrossNullConsole
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             StartGame();
         }
@@ -15,25 +16,26 @@ namespace CrossNull
             {
                 do
                 {
-                    Console.WriteLine("Добро пожаловать в игру КРЕСТИКИ-НОЛИКИ.");
+                    Console.Clear();
+                    Console.WriteLine("Добро пожаловать в игру КРЕСТИКИ-НОЛИКИ.\r\n");
 
                     Console.Write("Введите имя игрока за крестики (пустое имя если это будет Компьютер): ");
                     var playerXName = Console.ReadLine();
                     var playerX = string.IsNullOrWhiteSpace(playerXName)
-                        ? (Player) new Computer(Who.X)
-                        : new Human(Who.X, playerXName);
+                        ? (Player)new ComputerPlayer(Symbol.X)
+                        : new HumanPlayer(Symbol.X, playerXName, new SmartPlayerInteraction());
 
                     Console.Write("Введите имя игрока за нолики (пустое имя если это будет Компьютер): ");
                     var playerOName = Console.ReadLine();
                     var playerO = string.IsNullOrWhiteSpace(playerOName)
-                        ? (Player) new Computer(Who.O)
-                        : new Human(Who.O, playerOName);
+                        ? (Player)new ComputerPlayer(Symbol.O)
+                        : new HumanPlayer(Symbol.O, playerOName, new SmartPlayerInteraction());
 
                     var game = new Game(playerX, playerO);
                     do
                     {
                         Console.Clear();
-                        GameField.Print();
+                        GameFieldPainter.Paint();
                         game.SwitchTurn();
                         int x;
                         int y;
@@ -43,7 +45,7 @@ namespace CrossNull
                     } while (!game.CurrentPlayer.Winner && !GameField.Filled);
 
                     Console.Clear();
-                    GameField.Print();
+                    GameFieldPainter.Paint();
 
                     if (GameField.Filled)
                         Console.WriteLine("ЭТО НИЧЬЯ, ГОСПОДА...");

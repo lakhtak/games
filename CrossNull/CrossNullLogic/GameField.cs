@@ -1,19 +1,18 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
-namespace CrossNull
+namespace CrossNullLogic
 {
-    static class GameField
+    public class GameField
     {
         public const int FieldSize = 3;
 
-        public static Who[,] Field = new Who[FieldSize, FieldSize];
+        public static Symbol[,] Field = new Symbol[FieldSize, FieldSize];
 
-        public static Who[] Diagonal1
+        public static Symbol[] Diagonal1
         {
             get
             {
-                var content = new Who[FieldSize];
+                var content = new Symbol[FieldSize];
                 for (var i = 0; i < FieldSize; i++)
                 {
                     content[i] = Field[i, i];
@@ -22,11 +21,11 @@ namespace CrossNull
             }
         }
 
-        public static Who[] Diagonal2
+        public static Symbol[] Diagonal2
         {
             get
             {
-                var content = new Who[FieldSize];
+                var content = new Symbol[FieldSize];
                 for (var i = 0; i < FieldSize; i++)
                 {
                     content[i] = Field[i, FieldSize - i - 1];
@@ -35,9 +34,9 @@ namespace CrossNull
             }
         }
 
-        public static Who[] Row(int number)
+        public static Symbol[] Row(int number)
         {
-            var content = new Who[FieldSize];
+            var content = new Symbol[FieldSize];
             for (var i = 0; i < FieldSize; i++)
             {
                 content[i] = Field[number, i];
@@ -45,9 +44,9 @@ namespace CrossNull
             return content;
         }
 
-        public static Who[] Column(int number)
+        public static Symbol[] Column(int number)
         {
-            var content = new Who[FieldSize];
+            var content = new Symbol[FieldSize];
             for (var i = 0; i < FieldSize; i++)
             {
                 content[i] = Field[i, number];
@@ -55,11 +54,11 @@ namespace CrossNull
             return content;
         }
 
-        public static Who[][] Rows
+        public static Symbol[][] Rows
         {
             get
             {
-                var content = new Who[FieldSize][];
+                var content = new Symbol[FieldSize][];
                 for (var i = 0; i < FieldSize; i++)
                 {
                     content[i] = Row(i);
@@ -68,11 +67,11 @@ namespace CrossNull
             }
         }
 
-        public static Who[][] Columns
+        public static Symbol[][] Columns
         {
             get
             {
-                var content = new Who[FieldSize][];
+                var content = new Symbol[FieldSize][];
                 for (var i = 0; i < FieldSize; i++)
                 {
                     content[i] = Column(i);
@@ -85,15 +84,7 @@ namespace CrossNull
         {
             get
             {
-                return !Rows.Any(row => row.Any(cell => cell == Who.NoOne));
-            }
-        }
-
-        public static void Print()
-        {
-            foreach (var row in Rows)
-            {
-                Console.WriteLine(string.Join(" ", row.Select(cell => cell == Who.NoOne ? "*" : cell.ToString())));
+                return !Rows.Any(row => row.Any(cell => cell == Symbol.NoOne));
             }
         }
     }
