@@ -16,6 +16,7 @@ namespace CrossNullConsole
             {
                 do
                 {
+                    GameField.Reset();  
                     Console.Clear();
                     Console.WriteLine("Добро пожаловать в игру КРЕСТИКИ-НОЛИКИ.\r\n");
 
@@ -52,8 +53,8 @@ namespace CrossNullConsole
                     else
                         Console.WriteLine("УУУУУРРРРРРРРААААААА!!!!!! {0} ПОБЕЖДАЕТ!!!\r\n\r\n", game.CurrentPlayer.Name);
 
-                    Console.Write("Чтобы сыграть еще разочек напечатайте 'go': ");
-                } while (Console.ReadLine() == "go");
+                    Console.WriteLine("Чтобы сыграть еще разочек нажмите 'Enter'.");
+                } while (Console.ReadKey().Key == ConsoleKey.Enter);
             }
             catch (Exception ex)
             {

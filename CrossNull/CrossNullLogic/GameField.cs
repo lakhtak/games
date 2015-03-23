@@ -8,6 +8,11 @@ namespace CrossNullLogic
 
         public static Symbol[,] Field = new Symbol[FieldSize, FieldSize];
 
+        public static void Reset()
+        {
+            Field = new Symbol[FieldSize, FieldSize];
+        }
+
         public static Symbol[] Diagonal1
         {
             get

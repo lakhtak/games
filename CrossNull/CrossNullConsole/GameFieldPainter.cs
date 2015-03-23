@@ -19,13 +19,13 @@ namespace CrossNullConsole
             for (var i = 0; i < FieldSize; i++)
             {
                 var rowNumber = i;
-                Console.WriteLine(string.Join(" ",
+                Console.WriteLine(string.Join(string.Empty,
                     Row(rowNumber)
                         .Select(
                             (cell, index) =>
                                 rowNumber == x && index == y
                                     ? ReplaceSelectedCell(ReplaceNoOneCell(cell))
-                                    : ReplaceNoOneCell(cell))));
+                                    : " " + ReplaceNoOneCell(cell) + " ")) + "\r\n");
             }
         }
 
