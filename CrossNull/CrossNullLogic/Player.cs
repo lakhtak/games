@@ -5,6 +5,12 @@ namespace CrossNullLogic
     public class Player
     {
         public Symbol Symbol { get; private set; }
+        public Symbol OpponentSymbol {
+            get
+            {
+                return Symbol == Symbol.X ? Symbol.O : Symbol.X;
+            }
+        }
         public string Name { get; private set; }
         public bool Winner { get; set; }
         protected IPlayerInteraction PlayerInteraction;

@@ -1,5 +1,6 @@
 ﻿using System;
 using CrossNullLogic;
+using CrossNullLogic.Computer;
 
 namespace CrossNullConsole
 {
@@ -48,7 +49,7 @@ namespace CrossNullConsole
                     Console.Clear();
                     GameFieldPainter.Paint();
 
-                    if (GameField.Filled)
+                    if (!game.CurrentPlayer.Winner)
                         Console.WriteLine("ЭТО НИЧЬЯ, ГОСПОДА...");
                     else
                         Console.WriteLine("УУУУУРРРРРРРРААААААА!!!!!! {0} ПОБЕЖДАЕТ!!!\r\n\r\n", game.CurrentPlayer.Name);

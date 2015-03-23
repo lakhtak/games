@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 
 namespace CrossNullLogic
 {
@@ -83,6 +85,24 @@ namespace CrossNullLogic
                 }
                 return content;
             }
+        }
+
+        public static Point[] EmptyCells
+        {
+            get
+            {
+                var emptyCells = new List<Point>();
+
+                for (var i = 0; i < FieldSize; i++)
+                {
+                    for (var j = 0; j < FieldSize; j++)
+                    {
+                        if (Field[i, j] == Symbol.NoOne)
+                            emptyCells.Add(new Point(i, j));
+                    }
+                }
+                return emptyCells.ToArray();
+            }           
         }
 
         public static bool Filled
