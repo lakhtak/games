@@ -44,6 +44,7 @@
     <Compile Include="Computer\GetCornerTactic.cs" />
     <Compile Include="Computer\DefendOrWinTactic.cs" />
     <Compile Include="Computer\GetCenterTactic.cs" />
+    <Compile Include="Computer\GetSideTactic.cs" />
     <Compile Include="Computer\ITactic.cs" />
     <Compile Include="Computer\RandomTactic.cs" />
     <Compile Include="Game.cs" />

@@ -109,7 +109,7 @@ namespace CrossNullLogic
         {
             get
             {
-                return new []
+                return new[]
                 {
                     new Point(0, 0),
                     new Point(0, FieldSize - 1),
@@ -119,11 +119,33 @@ namespace CrossNullLogic
             }
         }
 
+        public static Point[] Sides
+        {
+            get
+            {
+                return new[]
+                {
+                    new Point(0, 1),
+                    new Point(1, 0),
+                    new Point(2, 1),
+                    new Point(1, 2)
+                };
+            }
+        }
+
         public static bool Filled
         {
             get
             {
                 return !Rows.Any(row => row.Any(cell => cell == Symbol.NoOne));
+            }
+        }
+
+        public static bool Empty
+        {
+            get
+            {
+                return !Rows.Any(row => row.Any(cell => cell != Symbol.NoOne));
             }
         }
     }

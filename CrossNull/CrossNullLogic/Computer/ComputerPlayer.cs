@@ -15,6 +15,7 @@ namespace CrossNullLogic.Computer
                 new DefendOrWinTactic().DefinePoint,
                 new GetCenterTactic().DefinePoint,
                 new GetCornerTactic().DefinePoint,
+                new GetSideTactic().DefinePoint,
                 new RandomTactic().DefinePoint
             };
         }
