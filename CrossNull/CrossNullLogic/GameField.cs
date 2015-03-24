@@ -105,6 +105,20 @@ namespace CrossNullLogic
             }           
         }
 
+        public static Point[] Corners
+        {
+            get
+            {
+                return new []
+                {
+                    new Point(0, 0),
+                    new Point(0, FieldSize - 1),
+                    new Point(FieldSize - 1, 0),
+                    new Point(FieldSize - 1, FieldSize - 1)
+                };
+            }
+        }
+
         public static bool Filled
         {
             get

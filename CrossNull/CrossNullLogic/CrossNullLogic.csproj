@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Computer\ComputerPlayer.cs" />
+    <Compile Include="Computer\GetCornerTactic.cs" />
     <Compile Include="Computer\DefendOrWinTactic.cs" />
     <Compile Include="Computer\GetCenterTactic.cs" />
     <Compile Include="Computer\ITactic.cs" />

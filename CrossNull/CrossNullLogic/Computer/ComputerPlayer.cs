@@ -8,12 +8,13 @@ namespace CrossNullLogic.Computer
 
         public OutAction<Player, int, int>[] Tactics;
 
-        public ComputerPlayer(Symbol symbol) : base(symbol, "Компьютер")
+        public ComputerPlayer(Symbol symbol) : base(symbol, "Компьютер-" + symbol)
         {
             Tactics = new OutAction<Player, int, int>[]
             {
                 new DefendOrWinTactic().DefinePoint,
                 new GetCenterTactic().DefinePoint,
+                new GetCornerTactic().DefinePoint,
                 new RandomTactic().DefinePoint
             };
         }
