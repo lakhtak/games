@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Computer\AvoidSideTrapTactic.cs" />
     <Compile Include="Computer\ComputerPlayer.cs" />
     <Compile Include="Computer\GetCornerTactic.cs" />
     <Compile Include="Computer\DefendOrWinTactic.cs" />

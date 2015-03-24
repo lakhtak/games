@@ -113,8 +113,8 @@ namespace CrossNullLogic
                 {
                     new Point(0, 0),
                     new Point(0, FieldSize - 1),
-                    new Point(FieldSize - 1, 0),
-                    new Point(FieldSize - 1, FieldSize - 1)
+                    new Point(FieldSize - 1, FieldSize - 1),
+                    new Point(FieldSize - 1, 0)
                 };
             }
         }
@@ -126,9 +126,9 @@ namespace CrossNullLogic
                 return new[]
                 {
                     new Point(0, 1),
-                    new Point(1, 0),
+                    new Point(1, 2),
                     new Point(2, 1),
-                    new Point(1, 2)
+                    new Point(1, 0)
                 };
             }
         }
