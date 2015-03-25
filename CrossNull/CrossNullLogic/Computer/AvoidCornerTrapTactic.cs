@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace CrossNullLogic.Computer
 {
-    class GetSideTactic : ITactic
+    class AvoidCornerTrapTactic : ITactic
     {
         private readonly Random _random = new Random();
 

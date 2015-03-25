@@ -12,11 +12,13 @@ namespace CrossNullLogic.Computer
         {
             Tactics = new OutAction<Player, int, int>[]
             {
-                new DefendOrWinTactic().DefinePoint,
+                new RandomXStartTactic().DefinePoint,
+                new WinTactic().DefinePoint,
+                new DefendTactic().DefinePoint,
+                new SideTrapTactic().DefinePoint,
                 new GetCenterTactic().DefinePoint,
-                new AvoidSideTrapTactic().DefinePoint,
-                new GetCornerTactic().DefinePoint,
-                new GetSideTactic().DefinePoint,
+                new CornerTrapTactic().DefinePoint,
+                new AvoidCornerTrapTactic().DefinePoint,
                 new RandomTactic().DefinePoint
             };
         }

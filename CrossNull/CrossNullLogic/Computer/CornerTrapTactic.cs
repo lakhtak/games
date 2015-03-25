@@ -1,9 +1,10 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace CrossNullLogic.Computer
 {
-    class GetCornerTactic : ITactic
+    class CornerTrapTactic : ITactic
     {
         public bool DefinePoint(Player player, out int x, out int y)
         {
@@ -33,7 +34,7 @@ namespace CrossNullLogic.Computer
             return myCorners.Any() && GetFirstFreeCorner(myCorners, out x, out y);
         }
 
-        private static bool GetFirstFreeCorner(Point[] corners, out int x, out int y)
+        private static bool GetFirstFreeCorner(IEnumerable<Point> corners, out int x, out int y)
         {
             x = 0;
             y = 0;

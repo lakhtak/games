@@ -1,11 +1,10 @@
 ﻿namespace CrossNullLogic.Computer
 {
-    class GetCenterTactic : ITactic
+    class WinTactic : ITactic
     {
         public bool DefinePoint(Player player, out int x, out int y)
         {
-            x = y = 1;
-            return !GameField.Empty && GameField.Field[1, 1] == Symbol.NoOne;
+            return WinOrDefend.FindOneCellLeftLine(player.Symbol, out x, out y);
         }
     }
 }

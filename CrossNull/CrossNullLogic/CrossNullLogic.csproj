@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Computer\AvoidSideTrapTactic.cs" />
-    <Compile Include="Computer\ComputerPlayer.cs" />
-    <Compile Include="Computer\GetCornerTactic.cs" />
-    <Compile Include="Computer\DefendOrWinTactic.cs" />
+    <Compile Include="Computer\DefendTactic.cs" />
     <Compile Include="Computer\GetCenterTactic.cs" />
-    <Compile Include="Computer\GetSideTactic.cs" />
+    <Compile Include="Computer\SideTrapTactic.cs" />
+    <Compile Include="Computer\ComputerPlayer.cs" />
+    <Compile Include="Computer\CornerTrapTactic.cs" />
+    <Compile Include="Computer\WinOrDefend.cs" />
+    <Compile Include="Computer\WinTactic.cs" />
+    <Compile Include="Computer\RandomXStartTactic.cs" />
+    <Compile Include="Computer\AvoidCornerTrapTactic.cs" />
     <Compile Include="Computer\ITactic.cs" />
     <Compile Include="Computer\RandomTactic.cs" />
     <Compile Include="Game.cs" />
