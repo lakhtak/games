@@ -2,12 +2,10 @@
 using System.Drawing;
 using System.Linq;
 
-namespace CrossNullLogic
+namespace SeaLines
 {
     public class GameField
     {
-        public const int FieldSize = 3;
-
         public static Symbol[,] Field = new Symbol[FieldSize, FieldSize];
 
         public static void Reset()
