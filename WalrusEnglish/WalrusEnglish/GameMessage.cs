@@ -25,9 +25,18 @@ namespace WalrusEnglishGui
                 "Данная игра сделана с целью обучить вас английским словам.\n" +
                 "Наслаждайтесь игрой."),
             new Tuple<MessageType, string, string>(MessageType.MakeMove,
-                "Please select the correct translation of the word", "Пожалуйста выберите корректный перевод слова"),
+                "Now it's your turn, {0}\n" + 
+                "Please select the correct translation of the word", 
+                "Сейчас ваша очередь, {0}\n" + 
+                "Пожалуйста выберите корректный перевод слова"),
+            new Tuple<MessageType, string, string>(MessageType.CorrectAnswer, "Well done, {0}! Your answer is correct! You get {1} point(s).",
+                "Молодец, {0}! Твой ответ правильный! Ты получаешь {1} очко(а)."),
+            new Tuple<MessageType, string, string>(MessageType.IncorrectAnswer, "Sorry, {0}, but this is wrong! You now have {1} fail(s).",
+                "Извини, {0}, но это неверно! Теперь у тебя {1} промах(а)(ов)"),
             new Tuple<MessageType, string, string>(MessageType.Win, "Congratulations! {0} is the winner!!!",
-                "Поздравляем! {0} победитель!!!")
+                "Поздравляем! {0} победитель!!!"),
+            new Tuple<MessageType, string, string>(MessageType.Lose, "Oh NO! {0} loses the game.",
+                "О НЕТ! {0} проиграл игру.")
         };
     }
 }

@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panelPlayerNumber = new System.Windows.Forms.Panel();
             this.labelPlayers = new System.Windows.Forms.Label();
             this.radioTwoPlayers = new System.Windows.Forms.RadioButton();
             this.radioOnePlayer = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelPointsToWin = new System.Windows.Forms.Panel();
             this.labelPointsToWin = new System.Windows.Forms.Label();
-            this.radioThirty = new System.Windows.Forms.RadioButton();
-            this.radioTwenty = new System.Windows.Forms.RadioButton();
-            this.radioTen = new System.Windows.Forms.RadioButton();
+            this.radioPoints3 = new System.Windows.Forms.RadioButton();
+            this.radioPoints2 = new System.Windows.Forms.RadioButton();
+            this.radioPoints1 = new System.Windows.Forms.RadioButton();
             this.labelPlayerOneName = new System.Windows.Forms.Label();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxPlayer1Name = new System.Windows.Forms.TextBox();
+            this.labelPlayerTwoName = new System.Windows.Forms.Label();
+            this.textBoxPlayer2Name = new System.Windows.Forms.TextBox();
+            this.panelFailsToLose = new System.Windows.Forms.Panel();
             this.labelFailCount = new System.Windows.Forms.Label();
-            this.radioFive = new System.Windows.Forms.RadioButton();
-            this.radioThree = new System.Windows.Forms.RadioButton();
-            this.radioOne = new System.Windows.Forms.RadioButton();
+            this.radioFails3 = new System.Windows.Forms.RadioButton();
+            this.radioFails2 = new System.Windows.Forms.RadioButton();
+            this.radioFails1 = new System.Windows.Forms.RadioButton();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCance = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelTranslation = new System.Windows.Forms.Panel();
             this.labelTranslation = new System.Windows.Forms.Label();
             this.radioRussianEnglish = new System.Windows.Forms.RadioButton();
             this.radioEnglishRussian = new System.Windows.Forms.RadioButton();
             this.panelPlayerNumber.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelPointsToWin.SuspendLayout();
+            this.panelFailsToLose.SuspendLayout();
+            this.panelTranslation.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPlayerNumber
@@ -82,6 +81,7 @@
             // radioTwoPlayers
             // 
             this.radioTwoPlayers.AutoSize = true;
+            this.radioTwoPlayers.Checked = true;
             this.radioTwoPlayers.Location = new System.Drawing.Point(10, 57);
             this.radioTwoPlayers.Name = "radioTwoPlayers";
             this.radioTwoPlayers.Size = new System.Drawing.Size(82, 17);
@@ -100,17 +100,18 @@
             this.radioOnePlayer.TabStop = true;
             this.radioOnePlayer.Text = "One player";
             this.radioOnePlayer.UseVisualStyleBackColor = true;
+            this.radioOnePlayer.CheckedChanged += new System.EventHandler(this.radioOnePlayer_CheckedChanged);
             // 
-            // panel2
+            // panelPointsToWin
             // 
-            this.panel2.Controls.Add(this.labelPointsToWin);
-            this.panel2.Controls.Add(this.radioThirty);
-            this.panel2.Controls.Add(this.radioTwenty);
-            this.panel2.Controls.Add(this.radioTen);
-            this.panel2.Location = new System.Drawing.Point(12, 134);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(76, 100);
-            this.panel2.TabIndex = 1;
+            this.panelPointsToWin.Controls.Add(this.labelPointsToWin);
+            this.panelPointsToWin.Controls.Add(this.radioPoints3);
+            this.panelPointsToWin.Controls.Add(this.radioPoints2);
+            this.panelPointsToWin.Controls.Add(this.radioPoints1);
+            this.panelPointsToWin.Location = new System.Drawing.Point(12, 134);
+            this.panelPointsToWin.Name = "panelPointsToWin";
+            this.panelPointsToWin.Size = new System.Drawing.Size(76, 100);
+            this.panelPointsToWin.TabIndex = 1;
             // 
             // labelPointsToWin
             // 
@@ -121,37 +122,37 @@
             this.labelPointsToWin.TabIndex = 3;
             this.labelPointsToWin.Text = "Points to win";
             // 
-            // radioThirty
+            // radioPoints3
             // 
-            this.radioThirty.AutoSize = true;
-            this.radioThirty.Location = new System.Drawing.Point(4, 76);
-            this.radioThirty.Name = "radioThirty";
-            this.radioThirty.Size = new System.Drawing.Size(68, 17);
-            this.radioThirty.TabIndex = 2;
-            this.radioThirty.Text = "30 points";
-            this.radioThirty.UseVisualStyleBackColor = true;
+            this.radioPoints3.AutoSize = true;
+            this.radioPoints3.Location = new System.Drawing.Point(4, 76);
+            this.radioPoints3.Name = "radioPoints3";
+            this.radioPoints3.Size = new System.Drawing.Size(68, 17);
+            this.radioPoints3.TabIndex = 2;
+            this.radioPoints3.Text = "30 points";
+            this.radioPoints3.UseVisualStyleBackColor = true;
             // 
-            // radioTwenty
+            // radioPoints2
             // 
-            this.radioTwenty.AutoSize = true;
-            this.radioTwenty.Checked = true;
-            this.radioTwenty.Location = new System.Drawing.Point(4, 52);
-            this.radioTwenty.Name = "radioTwenty";
-            this.radioTwenty.Size = new System.Drawing.Size(68, 17);
-            this.radioTwenty.TabIndex = 1;
-            this.radioTwenty.TabStop = true;
-            this.radioTwenty.Text = "20 points";
-            this.radioTwenty.UseVisualStyleBackColor = true;
+            this.radioPoints2.AutoSize = true;
+            this.radioPoints2.Checked = true;
+            this.radioPoints2.Location = new System.Drawing.Point(4, 52);
+            this.radioPoints2.Name = "radioPoints2";
+            this.radioPoints2.Size = new System.Drawing.Size(68, 17);
+            this.radioPoints2.TabIndex = 1;
+            this.radioPoints2.TabStop = true;
+            this.radioPoints2.Text = "20 points";
+            this.radioPoints2.UseVisualStyleBackColor = true;
             // 
-            // radioTen
+            // radioPoints1
             // 
-            this.radioTen.AutoSize = true;
-            this.radioTen.Location = new System.Drawing.Point(4, 28);
-            this.radioTen.Name = "radioTen";
-            this.radioTen.Size = new System.Drawing.Size(68, 17);
-            this.radioTen.TabIndex = 0;
-            this.radioTen.Text = "10 points";
-            this.radioTen.UseVisualStyleBackColor = true;
+            this.radioPoints1.AutoSize = true;
+            this.radioPoints1.Location = new System.Drawing.Point(4, 28);
+            this.radioPoints1.Name = "radioPoints1";
+            this.radioPoints1.Size = new System.Drawing.Size(68, 17);
+            this.radioPoints1.TabIndex = 0;
+            this.radioPoints1.Text = "10 points";
+            this.radioPoints1.UseVisualStyleBackColor = true;
             // 
             // labelPlayerOneName
             // 
@@ -162,39 +163,40 @@
             this.labelPlayerOneName.TabIndex = 2;
             this.labelPlayerOneName.Text = "Player one name:";
             // 
-            // textBox
+            // textBoxPlayer1Name
             // 
-            this.textBox.Location = new System.Drawing.Point(233, 38);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(139, 20);
-            this.textBox.TabIndex = 3;
+            this.textBoxPlayer1Name.Location = new System.Drawing.Point(233, 38);
+            this.textBoxPlayer1Name.Name = "textBoxPlayer1Name";
+            this.textBoxPlayer1Name.Size = new System.Drawing.Size(139, 20);
+            this.textBoxPlayer1Name.TabIndex = 3;
             // 
-            // label1
+            // labelPlayerTwoName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Player two name:";
+            this.labelPlayerTwoName.AutoSize = true;
+            this.labelPlayerTwoName.Location = new System.Drawing.Point(148, 71);
+            this.labelPlayerTwoName.Name = "labelPlayerTwoName";
+            this.labelPlayerTwoName.Size = new System.Drawing.Size(88, 13);
+            this.labelPlayerTwoName.TabIndex = 4;
+            this.labelPlayerTwoName.Text = "Player two name:";
             // 
-            // textBox1
+            // textBoxPlayer2Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBoxPlayer2Name.Location = new System.Drawing.Point(233, 68);
+            this.textBoxPlayer2Name.MaxLength = 20;
+            this.textBoxPlayer2Name.Name = "textBoxPlayer2Name";
+            this.textBoxPlayer2Name.Size = new System.Drawing.Size(139, 20);
+            this.textBoxPlayer2Name.TabIndex = 5;
             // 
-            // panel1
+            // panelFailsToLose
             // 
-            this.panel1.Controls.Add(this.labelFailCount);
-            this.panel1.Controls.Add(this.radioFive);
-            this.panel1.Controls.Add(this.radioThree);
-            this.panel1.Controls.Add(this.radioOne);
-            this.panel1.Location = new System.Drawing.Point(112, 134);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(82, 100);
-            this.panel1.TabIndex = 6;
+            this.panelFailsToLose.Controls.Add(this.labelFailCount);
+            this.panelFailsToLose.Controls.Add(this.radioFails3);
+            this.panelFailsToLose.Controls.Add(this.radioFails2);
+            this.panelFailsToLose.Controls.Add(this.radioFails1);
+            this.panelFailsToLose.Location = new System.Drawing.Point(112, 134);
+            this.panelFailsToLose.Name = "panelFailsToLose";
+            this.panelFailsToLose.Size = new System.Drawing.Size(82, 100);
+            this.panelFailsToLose.TabIndex = 6;
             // 
             // labelFailCount
             // 
@@ -205,37 +207,37 @@
             this.labelFailCount.TabIndex = 3;
             this.labelFailCount.Text = "Number of fails";
             // 
-            // radioFive
+            // radioFails3
             // 
-            this.radioFive.AutoSize = true;
-            this.radioFive.Location = new System.Drawing.Point(4, 76);
-            this.radioFive.Name = "radioFive";
-            this.radioFive.Size = new System.Drawing.Size(52, 17);
-            this.radioFive.TabIndex = 2;
-            this.radioFive.Text = "5 fails";
-            this.radioFive.UseVisualStyleBackColor = true;
+            this.radioFails3.AutoSize = true;
+            this.radioFails3.Location = new System.Drawing.Point(4, 76);
+            this.radioFails3.Name = "radioFails3";
+            this.radioFails3.Size = new System.Drawing.Size(52, 17);
+            this.radioFails3.TabIndex = 2;
+            this.radioFails3.Text = "5 fails";
+            this.radioFails3.UseVisualStyleBackColor = true;
             // 
-            // radioThree
+            // radioFails2
             // 
-            this.radioThree.AutoSize = true;
-            this.radioThree.Checked = true;
-            this.radioThree.Location = new System.Drawing.Point(4, 52);
-            this.radioThree.Name = "radioThree";
-            this.radioThree.Size = new System.Drawing.Size(52, 17);
-            this.radioThree.TabIndex = 1;
-            this.radioThree.TabStop = true;
-            this.radioThree.Text = "3 fails";
-            this.radioThree.UseVisualStyleBackColor = true;
+            this.radioFails2.AutoSize = true;
+            this.radioFails2.Checked = true;
+            this.radioFails2.Location = new System.Drawing.Point(4, 52);
+            this.radioFails2.Name = "radioFails2";
+            this.radioFails2.Size = new System.Drawing.Size(52, 17);
+            this.radioFails2.TabIndex = 1;
+            this.radioFails2.TabStop = true;
+            this.radioFails2.Text = "3 fails";
+            this.radioFails2.UseVisualStyleBackColor = true;
             // 
-            // radioOne
+            // radioFails1
             // 
-            this.radioOne.AutoSize = true;
-            this.radioOne.Location = new System.Drawing.Point(4, 28);
-            this.radioOne.Name = "radioOne";
-            this.radioOne.Size = new System.Drawing.Size(47, 17);
-            this.radioOne.TabIndex = 0;
-            this.radioOne.Text = "1 fail";
-            this.radioOne.UseVisualStyleBackColor = true;
+            this.radioFails1.AutoSize = true;
+            this.radioFails1.Location = new System.Drawing.Point(4, 28);
+            this.radioFails1.Name = "radioFails1";
+            this.radioFails1.Size = new System.Drawing.Size(47, 17);
+            this.radioFails1.TabIndex = 0;
+            this.radioFails1.Text = "1 fail";
+            this.radioFails1.UseVisualStyleBackColor = true;
             // 
             // buttonOk
             // 
@@ -245,6 +247,7 @@
             this.buttonOk.TabIndex = 7;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // buttonCance
             // 
@@ -254,16 +257,17 @@
             this.buttonCance.TabIndex = 8;
             this.buttonCance.Text = "Cancel";
             this.buttonCance.UseVisualStyleBackColor = true;
+            this.buttonCance.Click += new System.EventHandler(this.buttonCance_Click);
             // 
-            // panel3
+            // panelTranslation
             // 
-            this.panel3.Controls.Add(this.labelTranslation);
-            this.panel3.Controls.Add(this.radioRussianEnglish);
-            this.panel3.Controls.Add(this.radioEnglishRussian);
-            this.panel3.Location = new System.Drawing.Point(211, 134);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(171, 100);
-            this.panel3.TabIndex = 9;
+            this.panelTranslation.Controls.Add(this.labelTranslation);
+            this.panelTranslation.Controls.Add(this.radioRussianEnglish);
+            this.panelTranslation.Controls.Add(this.radioEnglishRussian);
+            this.panelTranslation.Location = new System.Drawing.Point(211, 134);
+            this.panelTranslation.Name = "panelTranslation";
+            this.panelTranslation.Size = new System.Drawing.Size(171, 100);
+            this.panelTranslation.TabIndex = 9;
             // 
             // labelTranslation
             // 
@@ -277,22 +281,22 @@
             // radioRussianEnglish
             // 
             this.radioRussianEnglish.AutoSize = true;
-            this.radioRussianEnglish.Checked = true;
             this.radioRussianEnglish.Location = new System.Drawing.Point(6, 52);
             this.radioRussianEnglish.Name = "radioRussianEnglish";
             this.radioRussianEnglish.Size = new System.Drawing.Size(138, 17);
             this.radioRussianEnglish.TabIndex = 5;
-            this.radioRussianEnglish.TabStop = true;
             this.radioRussianEnglish.Text = "From Russian to English";
             this.radioRussianEnglish.UseVisualStyleBackColor = true;
             // 
             // radioEnglishRussian
             // 
             this.radioEnglishRussian.AutoSize = true;
+            this.radioEnglishRussian.Checked = true;
             this.radioEnglishRussian.Location = new System.Drawing.Point(6, 28);
             this.radioEnglishRussian.Name = "radioEnglishRussian";
             this.radioEnglishRussian.Size = new System.Drawing.Size(138, 17);
             this.radioEnglishRussian.TabIndex = 4;
+            this.radioEnglishRussian.TabStop = true;
             this.radioEnglishRussian.Text = "From English to Russian";
             this.radioEnglishRussian.UseVisualStyleBackColor = true;
             // 
@@ -301,29 +305,30 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 282);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelTranslation);
             this.Controls.Add(this.buttonCance);
             this.Controls.Add(this.buttonOk);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.panelFailsToLose);
+            this.Controls.Add(this.textBoxPlayer2Name);
+            this.Controls.Add(this.labelPlayerTwoName);
+            this.Controls.Add(this.textBoxPlayer1Name);
             this.Controls.Add(this.labelPlayerOneName);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelPointsToWin);
             this.Controls.Add(this.panelPlayerNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewGameDialog";
             this.Text = "Start New Game";
+            this.Load += new System.EventHandler(this.NewGameDialog_Load);
             this.panelPlayerNumber.ResumeLayout(false);
             this.panelPlayerNumber.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelPointsToWin.ResumeLayout(false);
+            this.panelPointsToWin.PerformLayout();
+            this.panelFailsToLose.ResumeLayout(false);
+            this.panelFailsToLose.PerformLayout();
+            this.panelTranslation.ResumeLayout(false);
+            this.panelTranslation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,28 +336,27 @@
 
         #endregion
 
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Panel panelPlayerNumber;
         private System.Windows.Forms.RadioButton radioTwoPlayers;
         private System.Windows.Forms.RadioButton radioOnePlayer;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioThirty;
-        private System.Windows.Forms.RadioButton radioTwenty;
-        private System.Windows.Forms.RadioButton radioTen;
+        private System.Windows.Forms.Panel panelPointsToWin;
+        private System.Windows.Forms.RadioButton radioPoints3;
+        private System.Windows.Forms.RadioButton radioPoints2;
+        private System.Windows.Forms.RadioButton radioPoints1;
         private System.Windows.Forms.Label labelPointsToWin;
         private System.Windows.Forms.Label labelPlayerOneName;
-        private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.TextBox textBoxPlayer1Name;
         private System.Windows.Forms.Label labelPlayers;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelPlayerTwoName;
+        private System.Windows.Forms.TextBox textBoxPlayer2Name;
+        private System.Windows.Forms.Panel panelFailsToLose;
         private System.Windows.Forms.Label labelFailCount;
-        private System.Windows.Forms.RadioButton radioFive;
-        private System.Windows.Forms.RadioButton radioThree;
-        private System.Windows.Forms.RadioButton radioOne;
+        private System.Windows.Forms.RadioButton radioFails3;
+        private System.Windows.Forms.RadioButton radioFails2;
+        private System.Windows.Forms.RadioButton radioFails1;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCance;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelTranslation;
         private System.Windows.Forms.Label labelTranslation;
         private System.Windows.Forms.RadioButton radioRussianEnglish;
         private System.Windows.Forms.RadioButton radioEnglishRussian;

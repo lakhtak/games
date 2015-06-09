@@ -4,6 +4,9 @@
     {
         Hello,
         MakeMove,
-        Win
+        CorrectAnswer,
+        IncorrectAnswer,
+        Win,
+        Lose
     }
 }

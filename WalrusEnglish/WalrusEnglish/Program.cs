@@ -5,6 +5,8 @@ namespace WalrusEnglishGui
 {
     static class Program
     {
+        public static GameForm TheGameForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -13,7 +15,8 @@ namespace WalrusEnglishGui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameForm());
+            TheGameForm = new GameForm();
+            Application.Run(TheGameForm);
         }
     }
 }

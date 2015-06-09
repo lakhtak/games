@@ -47,6 +47,8 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelPlayer1Fails = new System.Windows.Forms.Label();
             this.labelPlayer2Fails = new System.Windows.Forms.Label();
+            this.labelFails = new System.Windows.Forms.Label();
+            this.labelPoints = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.panelVariants.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +73,7 @@
             this.labelPlayer2Name.Size = new System.Drawing.Size(61, 20);
             this.labelPlayer2Name.TabIndex = 1;
             this.labelPlayer2Name.Text = "Player2";
+            this.labelPlayer2Name.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelPlayer2Points
             // 
@@ -121,9 +124,10 @@
             this.labelTheWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTheWord.AutoSize = true;
-            this.labelTheWord.Location = new System.Drawing.Point(200, 245);
+            this.labelTheWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTheWord.Location = new System.Drawing.Point(170, 231);
             this.labelTheWord.Name = "labelTheWord";
-            this.labelTheWord.Size = new System.Drawing.Size(67, 13);
+            this.labelTheWord.Size = new System.Drawing.Size(126, 25);
             this.labelTheWord.TabIndex = 6;
             this.labelTheWord.Text = "THE WORD";
             this.labelTheWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,8 +153,9 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.newGameToolStripMenuItem.Text = "New game...";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // panelVariants
             // 
@@ -218,12 +223,13 @@
             this.buttonYes.TabIndex = 9;
             this.buttonYes.Text = "Да!";
             this.buttonYes.UseVisualStyleBackColor = true;
+            this.buttonYes.Click += new System.EventHandler(this.buttonYes_Click);
             // 
             // buttonStart
             // 
             this.buttonStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStart.Location = new System.Drawing.Point(194, 240);
+            this.buttonStart.Location = new System.Drawing.Point(203, 235);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(81, 23);
             this.buttonStart.TabIndex = 10;
@@ -235,6 +241,7 @@
             // 
             this.labelPlayer1Fails.AutoSize = true;
             this.labelPlayer1Fails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPlayer1Fails.ForeColor = System.Drawing.Color.Red;
             this.labelPlayer1Fails.Location = new System.Drawing.Point(23, 72);
             this.labelPlayer1Fails.Name = "labelPlayer1Fails";
             this.labelPlayer1Fails.Size = new System.Drawing.Size(54, 25);
@@ -246,6 +253,7 @@
             this.labelPlayer2Fails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPlayer2Fails.AutoSize = true;
             this.labelPlayer2Fails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPlayer2Fails.ForeColor = System.Drawing.Color.Red;
             this.labelPlayer2Fails.Location = new System.Drawing.Point(397, 75);
             this.labelPlayer2Fails.Name = "labelPlayer2Fails";
             this.labelPlayer2Fails.Size = new System.Drawing.Size(54, 25);
@@ -253,11 +261,31 @@
             this.labelPlayer2Fails.Text = "XXX";
             this.labelPlayer2Fails.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // labelFails
+            // 
+            this.labelFails.AutoSize = true;
+            this.labelFails.Location = new System.Drawing.Point(336, 235);
+            this.labelFails.Name = "labelFails";
+            this.labelFails.Size = new System.Drawing.Size(122, 13);
+            this.labelFails.TabIndex = 13;
+            this.labelFails.Text = "Играем до 0 промахов";
+            // 
+            // labelPoints
+            // 
+            this.labelPoints.AutoSize = true;
+            this.labelPoints.Location = new System.Drawing.Point(25, 231);
+            this.labelPoints.Name = "labelPoints";
+            this.labelPoints.Size = new System.Drawing.Size(102, 13);
+            this.labelPoints.TabIndex = 14;
+            this.labelPoints.Text = "Играем до 0 очков";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 386);
+            this.Controls.Add(this.labelPoints);
+            this.Controls.Add(this.labelFails);
             this.Controls.Add(this.labelPlayer2Fails);
             this.Controls.Add(this.labelPlayer1Fails);
             this.Controls.Add(this.buttonYes);
@@ -306,6 +334,8 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label labelPlayer1Fails;
         private System.Windows.Forms.Label labelPlayer2Fails;
+        private System.Windows.Forms.Label labelFails;
+        private System.Windows.Forms.Label labelPoints;
     }
 }
 

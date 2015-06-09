@@ -4,13 +4,31 @@
     {
         public static Player PlayerOne;
         public static Player PlayerTwo;
+        public static Player CurrentPlayer;
+        public static int FailsToLose;
+        public static int PointsToWin;
 
-        private static TheDictionary _dictionary;
+        public static TheDictionary WordDictionary;
 
-        public static void StartNew(bool englishRussian)
+        public static void StartNew(string playerOneName, string playerTwoName, bool englishRussian, int failsToLose, int pointsToWin)
         {
-            _dictionary = new TheDictionary(englishRussian);
+            WordDictionary = new TheDictionary(englishRussian);
+            FailsToLose = failsToLose;
+            PointsToWin = pointsToWin;
+
+            PlayerOne = new Player(playerOneName);
+            
+            if (!string.IsNullOrWhiteSpace(playerTwoName))
+                PlayerTwo = new Player(playerTwoName);
+
+            CurrentPlayer = PlayerOne;
         }
 
+        public static void SwitchTurn()
+        {
+            if (PlayerTwo == null) return;
+
+            CurrentPlayer = CurrentPlayer.Equals(PlayerOne) ? PlayerTwo : PlayerOne;
+        }
     }
 }
