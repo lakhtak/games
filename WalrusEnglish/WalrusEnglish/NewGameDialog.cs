@@ -47,6 +47,7 @@ namespace WalrusEnglishGui
 
             Game.StartNew(textBoxPlayer1Name.Text, textBoxPlayer2Name.Text, radioEnglishRussian.Checked, failsToLose, pointsToWin);
             Close();
+            Program.TheGameForm.SetStartMessage();
             Program.TheGameForm.Redraw();
         }
 

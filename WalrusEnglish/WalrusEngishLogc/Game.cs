@@ -17,9 +17,11 @@
             PointsToWin = pointsToWin;
 
             PlayerOne = new Player(playerOneName);
-            
+
             if (!string.IsNullOrWhiteSpace(playerTwoName))
-                PlayerTwo = new Player(playerTwoName);
+                PlayerTwo = new Player(playerTwoName, lastChance: true);
+            else
+                PlayerTwo = null;
 
             CurrentPlayer = PlayerOne;
         }
@@ -29,6 +31,25 @@
             if (PlayerTwo == null) return;
 
             CurrentPlayer = CurrentPlayer.Equals(PlayerOne) ? PlayerTwo : PlayerOne;
+        }
+
+        public static Player OppositePlayer
+        {
+            get
+            {
+                return CurrentPlayer.Equals(PlayerOne) ? PlayerTwo : PlayerOne;
+            }
+        }
+
+        public static bool Over()
+        {
+            if ((CurrentPlayer.Winner && (OppositePlayer == null || !OppositePlayer.LastChance)) || CurrentPlayer.Loser)
+                return true;
+
+            if (CurrentPlayer.Winner && OppositePlayer != null)
+                OppositePlayer.UseLastChance();
+            
+            return false;
         }
     }
 }

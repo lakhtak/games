@@ -129,7 +129,7 @@
             this.radioPoints3.Name = "radioPoints3";
             this.radioPoints3.Size = new System.Drawing.Size(68, 17);
             this.radioPoints3.TabIndex = 2;
-            this.radioPoints3.Text = "30 points";
+            this.radioPoints3.Text = "15 points";
             this.radioPoints3.UseVisualStyleBackColor = true;
             // 
             // radioPoints2
@@ -141,7 +141,7 @@
             this.radioPoints2.Size = new System.Drawing.Size(68, 17);
             this.radioPoints2.TabIndex = 1;
             this.radioPoints2.TabStop = true;
-            this.radioPoints2.Text = "20 points";
+            this.radioPoints2.Text = "10 points";
             this.radioPoints2.UseVisualStyleBackColor = true;
             // 
             // radioPoints1
@@ -149,9 +149,9 @@
             this.radioPoints1.AutoSize = true;
             this.radioPoints1.Location = new System.Drawing.Point(4, 28);
             this.radioPoints1.Name = "radioPoints1";
-            this.radioPoints1.Size = new System.Drawing.Size(68, 17);
+            this.radioPoints1.Size = new System.Drawing.Size(62, 17);
             this.radioPoints1.TabIndex = 0;
-            this.radioPoints1.Text = "10 points";
+            this.radioPoints1.Text = "5 points";
             this.radioPoints1.UseVisualStyleBackColor = true;
             // 
             // labelPlayerOneName
@@ -214,7 +214,7 @@
             this.radioFails3.Name = "radioFails3";
             this.radioFails3.Size = new System.Drawing.Size(52, 17);
             this.radioFails3.TabIndex = 2;
-            this.radioFails3.Text = "5 fails";
+            this.radioFails3.Text = "3 fails";
             this.radioFails3.UseVisualStyleBackColor = true;
             // 
             // radioFails2
@@ -226,7 +226,7 @@
             this.radioFails2.Size = new System.Drawing.Size(52, 17);
             this.radioFails2.TabIndex = 1;
             this.radioFails2.TabStop = true;
-            this.radioFails2.Text = "3 fails";
+            this.radioFails2.Text = "2 fails";
             this.radioFails2.UseVisualStyleBackColor = true;
             // 
             // radioFails1

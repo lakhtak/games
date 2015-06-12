@@ -55,14 +55,26 @@ namespace WalrusEngishLogc
         public string[] GetVariants()
         {
             var randomVariants = new string[4];
+            var variantsExceptCurrent = _variants.Where(variant => !variant.Equals(_currentWord.Value)).ToArray();
+            var randoms = GenerateRandomArray(randomVariants.Count(), variantsExceptCurrent.Count() - 1);
             for (var i = 0; i < randomVariants.Count(); i++)
-            {
-                randomVariants[i] = _variants[_random.Next(_variants.Count - 1)];
-            }
+                randomVariants[i] = variantsExceptCurrent[randoms[i]];
             
             randomVariants[_random.Next(randomVariants.Count() - 1)] = _currentWord.Value;
 
             return randomVariants;
+        }
+
+        private int[] GenerateRandomArray(int count, int maxValue)
+        {
+            var randomArray = new List<int>();
+            do
+            {
+                var randomValue = _random.Next(maxValue);
+                if (!randomArray.Contains(randomValue))
+                    randomArray.Add(randomValue);
+            } while (randomArray.Count < count);
+            return randomArray.ToArray();
         }
 
         public bool IsAnswerCorrect(string answer)
