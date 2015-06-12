@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 
-namespace WalrusEngishLogc
+namespace WalrusEngishLogic
 {
     public class TheDictionary
     {
@@ -22,10 +24,16 @@ namespace WalrusEngishLogc
 
         private void LoadWordsFromFile()
         {
+            try
+            {
             _words = new Dictionary<string, string>();
             _variants = new List<string>();
 
-            var lines = File.ReadAllLines("Words.txt", Encoding.Unicode);
+            var dictionaryFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Words.txt");
+            if (!File.Exists(dictionaryFilePath))
+                throw new FileNotFoundException("Мы не нашли файл словаря: " + dictionaryFilePath);
+
+            var lines = File.ReadAllLines(dictionaryFilePath, Encoding.UTF8);
             foreach (var line in lines)
             {
                 var splittedLine = line.Split(new[] {'|'}, 2);
@@ -39,6 +47,17 @@ namespace WalrusEngishLogc
                 _words.Add(word, translation);
                 _variants.Add(translation);
             }
+
+            if(!_words.Any())
+                throw new FileLoadException(string.Format("Мы не нашли словаря в файле {0} :(", dictionaryFilePath));
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                "Ошибка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         public string GetNextWord()

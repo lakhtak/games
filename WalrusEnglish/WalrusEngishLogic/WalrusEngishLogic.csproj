@@ -7,8 +7,8 @@
     <ProjectGuid>{823F2B74-F469-4D44-B012-D30DEDF0752A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WalrusEngishLogc</RootNamespace>
-    <AssemblyName>WalrusEngishLogc</AssemblyName>
+    <RootNamespace>WalrusEngishLogic</RootNamespace>
+    <AssemblyName>WalrusEngishLogic</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

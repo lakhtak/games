@@ -2,8 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using WalrusEngishLogc;
-using WalrusEnglish;
+using WalrusEngishLogic;
 
 namespace WalrusEnglishGui
 {

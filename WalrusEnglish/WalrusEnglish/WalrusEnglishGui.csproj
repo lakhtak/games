@@ -89,9 +89,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WalrusEngishLogc\WalrusEngishLogc.csproj">
-      <Project>{823F2B74-F469-4D44-B012-D30DEDF0752A}</Project>
-      <Name>WalrusEngishLogc</Name>
+    <ProjectReference Include="..\WalrusEngishLogic\WalrusEngishLogic.csproj">
+      <Project>{823f2b74-f469-4d44-b012-d30dedf0752a}</Project>
+      <Name>WalrusEngishLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

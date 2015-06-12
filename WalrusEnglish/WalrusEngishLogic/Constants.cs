@@ -1,4 +1,4 @@
-﻿namespace WalrusEngishLogc
+﻿namespace WalrusEngishLogic
 {
     public static class Constants
     {

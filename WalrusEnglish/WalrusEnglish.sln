@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalrusEnglishGui", "WalrusEnglish\WalrusEnglishGui.csproj", "{AC860CDD-478D-4183-86F8-85DBD3671556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalrusEngishLogc", "WalrusEngishLogc\WalrusEngishLogc.csproj", "{823F2B74-F469-4D44-B012-D30DEDF0752A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalrusEngishLogic", "WalrusEngishLogic\WalrusEngishLogic.csproj", "{823F2B74-F469-4D44-B012-D30DEDF0752A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
